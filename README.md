@@ -1,1 +1,1 @@
-"# Sistema de Contabilidad - Versi¢n de Escritorio" 
+"# Sistema de Contabilidad - Version de Escritorio" 
