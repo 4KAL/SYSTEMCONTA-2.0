@@ -1,0 +1,53 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Binarios y runtime (se generan/construyen por separado)
+*.exe
+*.apk
+*.dll
+*.so
+*.dylib
+*.db
+*.sqlite
+*-wal
+*-shm
+/desktop/contabilidad.db
+/desktop/contabilidad_rust.db*
+/release/
+/dist/
+
+# Runtime noise / logs
+*.log
+backups/
+migracion_reporte.txt
+qr_actual.html
+qr_escanear.png
+tts_ok.txt
+cloudflared.log*
+.DS_Store
+Thumbs.db
+
+# Python / QML (stack anterior)
+__pycache__/
+*.pyc
+*.pyo
+
+# Mobile (abandonado)
+/sistema_contabilidad_mobile/
+/flutter/
+
+# Stack anterior (Python/PySide/QML) - obsoleto, ignorado de git
+/backend/
+/frontend/
+/models/
+/ui/
+/main.py
+/main_qml.py
+/database.py
+/run_desktop.py
+/updater.py
+/run_qml_preview.bat
+/ejecutar_sistema.bat
+/compilar_y_preparar.bat
+/sistema_contabilidad_desktop/

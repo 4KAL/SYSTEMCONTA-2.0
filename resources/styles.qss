@@ -1,0 +1,451 @@
+/*
+Estilos para el Sistema de Contabilidad
+Diseño moderno tipo SaaS (Notion, Linear, Stripe)
+*/
+
+/* Paleta de colores principal */
+:root {
+    /* Colores por categoría */
+    --color-ventas: #4361ee;
+    --color-ventas-light: #4895ef;
+    --color-ventas-lighter: #4cc9f0;
+    --color-ventas-bg: rgba(67, 97, 238, 0.1);
+
+    --color-gastos: #f72585;
+    --color-gastos-light: #b5179e;
+    --color-gastos-lighter: #f896d8;
+    --color-gastos-bg: rgba(247, 37, 133, 0.1);
+
+    --color-cxc: #f8961e;
+    --color-cxc-light: #f9c74f;
+    --color-cxc-lighter: #ffd166;
+    --color-cxc-bg: rgba(248, 150, 30, 0.1);
+
+    --color-cxp: #9d4edd;
+    --color-cxp-light: #7209b7;
+    --color-cxp-lighter: #c77dff;
+    --color-cxp-bg: rgba(157, 78, 221, 0.1);
+
+    --color-utilidad: #52b788;
+    --color-utilidad-light: #74c69d;
+    --color-utilidad-bg: rgba(82, 183, 136, 0.1);
+
+    --color-alerta: #f94144;
+    --color-alerta-bg: rgba(249, 65, 68, 0.1);
+
+    /* Colores neutros */
+    --color-primary: #2b2d42;
+    --color-primary-light: #8d99ae;
+    --color-secondary: #edf2f4;
+    --color-secondary-light: #f8f9fa;
+    --color-background: #f1f3f5;
+    --color-surface: #ffffff;
+    --color-text: #2b2d42;
+    --color-text-light: #8d99ae;
+    --color-border: #e9ecef;
+    --color-shadow: rgba(0, 0, 0, 0.08);
+    --color-shadow-hover: rgba(0, 0, 0, 0.16);
+}
+
+/* Estilo base */
+QMainWindow {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Barra de herramientas - estilo moderno */
+QToolBar {
+    background-color: var(--color-primary);
+    color: white;
+    spacing: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 0;
+}
+
+QToolButton {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+QToolButton:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: white;
+}
+
+QToolButton:checked {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-bottom: 2px solid var(--color-ventas);
+}
+
+/* Barra de estado */
+QStatusBar {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+/* Widgets principales */
+QWidget {
+    background-color: transparent;
+    color: var(--color-text);
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+/* Títulos - jerarquía clara */
+QLabel#TitleLabel {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-primary);
+    padding: 12px 0 8px 0;
+    margin: 0;
+}
+
+/* Sección de títulos */
+.QSectionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-primary);
+    padding: 16px 0 8px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Tarjetas flotantes - estilo moderno */
+.QCard {
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px var(--color-shadow);
+    border: 1px solid var(--color-border);
+    margin: 8px 0;
+}
+
+.QCard:hover {
+    box-shadow: 0 10px 15px -3px var(--color-shadow-hover);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas de resumen por categoría - estilo flotante */
+.QSummaryCard {
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px var(--color-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin: 0 8px;
+    min-width: 220px;
+    min-height: 120px;
+    transition: all 0.2s ease;
+}
+
+.QSummaryCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px var(--color-shadow-hover);
+}
+
+.QSummaryCard#VentasCard {
+    background-color: rgba(67, 97, 238, 0.1);
+    border-top: 4px solid var(--color-ventas);
+}
+
+.QSummaryCard#GastosCard {
+    background-color: rgba(247, 37, 133, 0.1);
+    border-top: 4px solid var(--color-gastos);
+}
+
+.QSummaryCard#CxCCard {
+    background-color: rgba(248, 150, 30, 0.1);
+    border-top: 4px solid var(--color-cxc);
+}
+
+.QSummaryCard#CxPCard {
+    background-color: rgba(157, 78, 221, 0.1);
+    border-top: 4px solid var(--color-cxp);
+}
+
+.QSummaryCard#UtilidadCard {
+    background-color: rgba(82, 183, 136, 0.1);
+    border-top: 4px solid var(--color-utilidad);
+}
+
+.QSummaryCardValue {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 8px 0 4px 0;
+    min-height: 40px;
+}
+
+.QSummaryCardLabel {
+    font-size: 13px;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+/* Estados vacíos - con personalidad */
+.QEmptyState {
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 1px dashed var(--color-border);
+    color: var(--color-text-light);
+    margin: 16px 0;
+}
+
+.QEmptyStateIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--color-primary-light);
+}
+
+.QEmptyStateTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.QEmptyStateText {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+/* Botones - con feedback visual */
+QPushButton {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 40px;
+    min-width: 100px;
+    box-shadow: 0 2px 4px -1px var(--color-shadow);
+    transition: all 0.2s ease;
+}
+
+QPushButton:hover {
+    background-color: #1a1c30;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px -1px var(--color-shadow-hover);
+}
+
+QPushButton:pressed {
+    background-color: #0d0e18;
+    transform: translateY(0);
+    box-shadow: 0 1px 2px -1px var(--color-shadow);
+}
+
+QPushButton:disabled {
+    background-color: var(--color-border);
+    color: var(--color-text-light);
+    box-shadow: none;
+}
+
+QPushButton#PrimaryButton {
+    background-color: var(--color-primary);
+}
+
+QPushButton#SuccessButton {
+    background-color: var(--color-utilidad);
+}
+
+QPushButton#WarningButton {
+    background-color: var(--color-cxc);
+}
+
+QPushButton#DangerButton {
+    background-color: var(--color-alerta);
+}
+
+QPushButton#CategoryVentas {
+    background-color: var(--color-ventas);
+}
+
+QPushButton#CategoryGastos {
+    background-color: var(--color-gastos);
+}
+
+QPushButton#CategoryCxC {
+    background-color: var(--color-cxc);
+}
+
+QPushButton#CategoryCxP {
+    background-color: var(--color-cxp);
+}
+
+/* Tablas - estilo moderno */
+QTableView {
+    background-color: var(--color-surface);
+    border: none;
+    border-radius: 12px;
+    padding: 4px;
+    selection-background-color: rgba(67, 97, 238, 0.15);
+    selection-color: var(--color-ventas);
+    gridline-color: var(--color-border);
+    alternate-background-color: rgba(0, 0, 0, 0.02);
+}
+
+QTableView::item {
+    padding: 12px 8px;
+    border: none;
+}
+
+QTableView::item:selected {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--color-ventas);
+}
+
+QHeaderView::section {
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    padding: 12px 8px;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    font-weight: 600;
+    text-align: left;
+}
+
+QHeaderView::section:first {
+    border-top-left-radius: 12px;
+}
+
+QHeaderView::section:last {
+    border-top-right-radius: 12px;
+}
+
+QHeaderView::section:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Formularios - estilo limpio */
+QLineEdit, QComboBox, QTextEdit, QDateEdit {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-height: 40px;
+    font-size: 14px;
+    color: var(--color-text);
+}
+
+QLineEdit:focus, QComboBox:focus, QTextEdit:focus, QDateEdit:focus {
+    border: 1px solid var(--color-ventas);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+QFormLayout {
+    spacing: 16px;
+}
+
+QFormLayout Label {
+    font-weight: 500;
+    color: var(--color-primary);
+    padding: 4px 0;
+}
+
+/* Diálogos - estilo moderno */
+QDialog {
+    background-color: var(--color-background);
+    border-radius: 12px;
+}
+
+QDialog > QWidget {
+    padding: 24px;
+}
+
+QDialogButtonBox {
+    button-layout: 0; /* Windows style */
+}
+
+QDialogButtonBox QPushButton {
+    min-width: 100px;
+    padding: 8px 16px;
+}
+
+/* Scrollbars - estilo minimalista */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background: transparent;
+    border: none;
+    width: 8px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background: var(--color-primary-light);
+    border-radius: 4px;
+    min-height: 40px;
+}
+
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
+    background: var(--color-primary);
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: none;
+    border: none;
+    width: 0;
+    height: 0;
+}
+
+/* Tooltips - estilo moderno */
+QToolTip {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 240;
+}
+
+/* Gráficos - estilo consistente */
+.QChartView {
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.QChart {
+    background: transparent;
+}
+
+.QChartTitle {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Iconos - estilo consistente */
+.QIcon {
+    color: var(--color-primary-light);
+}
+
+.QIcon:hover {
+    color: var(--color-primary);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.QFadeIn {
+    animation: fadeIn 0.3s ease-out;
+}
